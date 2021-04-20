@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <style>
+      p.exnormal { font-style: normal; }
+      p.exitalic { font-style: italic; }
+      p.exoblique { font-style: oblique; }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>{% block title %}{% endblock %}</title>
+   {% block head %}{% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B3%D0%B0_%D0%B8_%D0%BA%D0%BE%D0%BF%D1%8B%D1%82%D0%B0_(%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)">ООО "Рога и Копыта"</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">На главную</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">Мотивация</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/problem">Задача для команды</a>
+        </li>
+    </div>
+  </div>
+    {% if current_user.is_authenticated %}
+    <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
+{% else %}
+        <a class="btn btn-secondary" href="/register">Зарегистрироваться</a>
+        <a class="btn btn-primary " href="/login">Войти</a>
+    </p>
+{% endif %}
+</nav>
+<main class="container">
+  <div class="bg-light p-5 rounded">
+  {% block body %}{% endblock %}
+    <p class="lead"></p>
+      <a class="btn btn-secondary" href="/problem" role="button">Перейти в раздел ЗАДАЧИ</a>
+  </div>
+</main>
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вернуться наверх</font></font></a></p>
+    <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">© 2020--2021 Company, Inc. </font><font style="vertical-align: inherit;">· </font></font><a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B3%D0%B0_%D0%B8_%D0%BA%D0%BE%D0%BF%D1%8B%D1%82%D0%B0_(%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ООО "Рога и копыта"</font></font></a></p>
+  </footer>
+</main>
+
+
+
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body>
+</body>
+</html>

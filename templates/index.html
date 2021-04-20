@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}
+О нас
+{% endblock %}
+
+{% block head %}
+<style>
+      .deadline {
+        width: 400px;
+        height: 400px;
+        border: 5px solid #515151;
+      }
+      .udal {
+        width: 400px;
+        height: 400px;
+        border: 5px solid #515151;
+      }
+      .otpusk {
+        width: 400px;
+        height: 400px;
+        border: 5px solid #515151;
+      }
+      .trud {
+        width: 400px;
+        height: 400px;
+        border: 5px solid #515151;
+      }
+</style>
+{% endblock %}
+
+{% block body %}
+<main>
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" >
+    <div class="col-md-5 p-lg-5 mx-auto my-3">
+      <h1 class="display-4 fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Да пребудет с тобой Сила  </font></font></h1>
+      <p class="lead fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> </font> Выходные для слабаков! Только работа, только хардкор! <font style="vertical-align: inherit;"></font></font></p>
+      <a class="btn btn-outline-primary" href="problem"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Не забудь высказать свою крутую идею :)</font></font></a>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Об удалёнке :)</font></font></h2>
+        <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Удалённая работа — это не только приятно, но и круглосуточно.</font></font></p>
+      </div>
+      <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;" class="udal">
+      <img src="static/images/udal.jpg">
+
+      </div>
+    </div>
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Об отчетах :(</font></font></h2>
+        <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Как мало пройдено дорог — как много сделано отчетов...</font></font></p>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"class="deadline">
+      <img src="static/images/deadline.jpg">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Про отпуск</font></font></h2>
+        <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">не ходите люди в эти отпуска после них  полгода <br> грусть печаль тоска...</font></font></p>
+      </div>
+      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; "class="otpusk">
+      <img src="static/images/otpusk2.jpg">
+
+      </div>
+    </div>
+    <div class="bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 py-3">
+        <h2 class="display-5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Жизненно...</font></font></h2>
+        <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Работать не хотелось, но жадность победила лень.</font></font></p>
+      </div>
+      <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"class="trud">
+      <img src="static/images/trud2.jpg">
+
+      </div>
+    </div>
+  </div>
+
+
+</main>
+{% endblock %}
