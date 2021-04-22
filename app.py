@@ -25,6 +25,8 @@ login_manager.init_app(app)
 
 def main():
     db_session.global_init("db/base_workers.db")
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://base_workers.db'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.run()
 
 
