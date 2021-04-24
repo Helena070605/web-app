@@ -16,7 +16,7 @@ from flask_login import logout_user
 from flask_login import login_user
 from flask_login import current_user
 from flask import abort
-from flask_ngrok import run_with_ngrok
+# from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
 # run_with_ngrok(app)
