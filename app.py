@@ -1,5 +1,4 @@
 import os
-
 from flask import Flask, render_template, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql.functions import current_user
@@ -26,7 +25,6 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
-
 
 
 @login_manager.user_loader
