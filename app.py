@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql.functions import current_user
@@ -15,23 +17,16 @@ from flask_login import logout_user
 from flask_login import login_user
 from flask_login import current_user
 from flask import abort
+from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+run_with_ngrok(app)
 
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-
-def main():
-    db_session.global_init("db/base_workers.db")
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://base_workers.db'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.run()
 
 
 @login_manager.user_loader
@@ -176,4 +171,5 @@ def problems_delete(id):
 
 
 if __name__ == '__main__':
-    main()
+    db_session.global_init("db/base_workers.db")
+    app.run()
