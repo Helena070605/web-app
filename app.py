@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for, request
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql.functions import current_user
 from werkzeug.exceptions import abort
 from werkzeug.utils import redirect
@@ -16,6 +17,9 @@ from flask_login import current_user
 from flask import abort
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
